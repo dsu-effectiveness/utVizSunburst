@@ -1,10 +1,10 @@
 Type: Package
-Package: PackageNAME
-Title: A Good Package Title
+Package: utVizSunburst
+Title: htmlwidgets package for creating sunburst plots of retentions and admissions data
 Version: 0.0.1
 Authors@R:
     person("Jumping", "Rivers", , "info@jumpingrivers.com", role = c("aut", "cre"))
-Description: Please add a package description. It does help.
+Description: A package to create interactive visualizations of retentions and admissions data.
 License: file LICENSE
 Depends: 
     R (>= 4.0.2)
