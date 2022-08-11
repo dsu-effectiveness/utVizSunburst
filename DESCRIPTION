@@ -7,7 +7,7 @@ Authors@R:
 Description: A package to create interactive visualizations of retentions and admissions data.
 License: file LICENSE
 Depends: 
-    R (>= 4.0.2)
+    R (>= 4.1.0)
 Imports:
     magrittr,
     rlang
