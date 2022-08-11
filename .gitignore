@@ -41,9 +41,21 @@ vignettes/*.pdf
 
 # pkgdown site
 docs/
+*_files/
 
 # translation temp files
 po/*~
 
 # RStudio Connect folder
 rsconnect/
+inst/doc
+.env
+.secrets
+
+# R-independent files
+.DS_Store
+*.env
+*.swp
+
+# JR-specific files
+.jrtemplate.yml
