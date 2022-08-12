@@ -28,8 +28,8 @@ are provided. To use these you will need a local copy of both the python
 [{precommit} package](https://github.com/lorenzwalthert/precommit/).
 This uses various other R packages (styler, lintr etc) that must be installed in your R environment.
 
-At present, {styler} is configured to it's second-most stringent level (scope = "line_breaks") and
-as such will not modify any symbols in your code.
+At present, {styler} is configured to it's second-most stringent level (`scope = "line_breaks"`)
+and as such will not modify any symbols in your code.
 
 ### Tests
 
