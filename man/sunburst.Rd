@@ -2,10 +2,17 @@
 % Please edit documentation in R/sunburst.R
 \name{sunburst}
 \alias{sunburst}
-\title{<Add Title>}
+\title{Create a HTML sunburst plot for displaying admissions and retention data}
 \usage{
 sunburst(message, width = NULL, height = NULL, elementId = NULL)
 }
+\arguments{
+\item{message}{Placeholder.}
+
+\item{width, height}{The initial size of the visualization}
+
+\item{elementId}{Identifier for the HTML element into which the visualization will be added.}
+}
 \description{
-<Add Description>
+Create a HTML sunburst plot for displaying admissions and retention data
 }
