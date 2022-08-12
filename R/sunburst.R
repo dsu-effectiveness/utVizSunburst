@@ -3,7 +3,6 @@
 #' @param   message   Placeholder.
 #' @param   width,height   The initial size of the visualization
 #' @param   elementId   Identifier for the HTML element into which the visualization will be added.
-#' @import   htmlwidgets
 #'
 #' @export
 
