@@ -29,3 +29,9 @@ head(admissions)
 ```
 
 The dataset contains `r ncol(admissions)` variables and `r nrow(admissions)` observations.
+
+# A simple sunburst chart
+
+```{r}
+sunburst(admissions)
+```

@@ -1,16 +1,14 @@
 #' Create a HTML sunburst plot for displaying admissions and retention data
 #'
-#' @param   message   Placeholder.
+#' @param   data   Data-frame.
 #' @param   width,height   The initial size of the visualization
 #' @param   elementId   Identifier for the HTML element into which the visualization will be added.
 #'
 #' @export
 
-sunburst = function(message, width = NULL, height = NULL, elementId = NULL) {
+sunburst = function(data, width = NULL, height = NULL, elementId = NULL) {
   # forward options using x
-  x = list(
-    message = message
-  )
+  x = list()
 
   # create widget
   htmlwidgets::createWidget(

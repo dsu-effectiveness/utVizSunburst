@@ -4,10 +4,10 @@
 \alias{sunburst}
 \title{Create a HTML sunburst plot for displaying admissions and retention data}
 \usage{
-sunburst(message, width = NULL, height = NULL, elementId = NULL)
+sunburst(data, width = NULL, height = NULL, elementId = NULL)
 }
 \arguments{
-\item{message}{Placeholder.}
+\item{data}{Data-frame.}
 
 \item{width, height}{The initial size of the visualization}
 
