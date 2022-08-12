@@ -1,3 +1,13 @@
+# utVizSunburst 0.0.4 *2022-08-11*
+
+-   Add unit-testing infrastructure
+-   Use precommit to help maintain code quality
+-   Add a section on development practices / setup to the README
+-   Ensured the lintr configuration makes sense for an {htmlwidgets} based package
+    - camelCase variables are allowed for shiny/html-interfacing functions/variables
+    - but the R API for manipulating the visualizations will use `snake_case`
+-   Removed the `object_usage_linter` since this requires the package to be loaded before linting
+
 # utVizSunburst 0.0.3 *2022-08-11*
 
 -   Add files for documenting the package
