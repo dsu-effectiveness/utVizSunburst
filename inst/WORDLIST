@@ -1,5 +1,6 @@
 aut
 camelCase
+cdc
 CODEOWNERS
 Config
 cre
@@ -8,6 +9,7 @@ htmlwidgets
 HTMLWidgets
 init
 innerText
+JS
 jumpingrivers
 knitr
 LazyData
@@ -29,5 +31,7 @@ styler
 stylesheet
 testthat
 uncomment
+utviz
 utVizSunburst
 VignetteBuilder
+yaml
