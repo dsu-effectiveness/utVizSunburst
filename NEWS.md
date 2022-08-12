@@ -1,3 +1,9 @@
+# utVizSunburst 0.0.3 *2022-08-11*
+
+-   Add files for documenting the package
+-   README.md (for describing purpose / installation)
+-   A vignette for demonstrating how to use the package, and how it meets the client requirements
+
 # utVizSunburst 0.0.2 *2022-08-11*
 
 -   Add package structure using pm-init
