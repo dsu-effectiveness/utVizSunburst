@@ -9,7 +9,8 @@
 sunburst = function(data, width = NULL, height = NULL, elementId = NULL) {
   # forward options using x
   x = list(
-    data = data
+    data = data,
+    steps = colnames(data)[-1]
   )
 
   # Ensures that javascript receives a row-oriented view of 'data'

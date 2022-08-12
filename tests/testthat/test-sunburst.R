@@ -27,4 +27,10 @@ describe("the sunburst object", {
 
     expect_equal(sb$x$data, test_data)
   })
+
+  it("has a 'steps' entry", {
+    sb = sunburst(data = test_data)
+
+    expect_true("steps" %in% names(sb$x))
+  })
 })
