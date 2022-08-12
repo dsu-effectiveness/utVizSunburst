@@ -8,7 +8,9 @@
 
 sunburst = function(data, width = NULL, height = NULL, elementId = NULL) {
   # forward options using x
-  x = list()
+  x = list(
+    data = data
+  )
 
   # create widget
   htmlwidgets::createWidget(
