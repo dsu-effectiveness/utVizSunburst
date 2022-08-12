@@ -15,6 +15,7 @@ repos:
     -   id: spell-check
         exclude: >
           (?x)^(
+          .*\.js|
           .*\.[rR]|
           .*\.feather|
           .*\.jpeg|
