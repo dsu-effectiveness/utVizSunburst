@@ -1,3 +1,7 @@
+# utVizSunburst 0.0.7 *2022-08-12*
+
+-   Add an example "admissions" dataset to the package, for use in example code in the vignette.
+
 # utVizSunburst 0.0.6 *2022-08-12*
 
 -   Store the JS dependencies of the sunburst() widget in the package (handlebars 4.7.7; utviz
