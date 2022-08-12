@@ -12,6 +12,9 @@ sunburst = function(data, width = NULL, height = NULL, elementId = NULL) {
     data = data
   )
 
+  # Ensures that javascript receives a row-oriented view of 'data'
+  attr(x, "TOJSON_ARGS") = list(dataframe = "rows") # nolint: object_name_linter.
+
   # create widget
   htmlwidgets::createWidget(
     name = "sunburst",
