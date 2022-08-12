@@ -1,3 +1,7 @@
+# utVizSunburst 0.0.5 *2022-08-12*
+
+-   Add {htmlwidgets} skeleton for a `sunburst()` function
+
 # utVizSunburst 0.0.4 *2022-08-11*
 
 -   Add unit-testing infrastructure
