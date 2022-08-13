@@ -1,3 +1,7 @@
+# utVizSunburst 0.1.0 *2022-08-13*
+
+-   sunburst(data, steps) adds a sunburst chart to an html page
+
 # utVizSunburst 0.0.7 *2022-08-12*
 
 -   Add an example "admissions" dataset to the package, for use in example code in the vignette.
