@@ -12,8 +12,11 @@ HTMLWidgets.widget({
 
       renderValue: function(x) {
 
-        // TODO: code to render the widget, e.g.
-        el.innerText = "Hello, World!";
+        const sunburst = utviz
+          .createSunburst(x.data, x.steps)
+          .render();
+
+        el.appendChild(sunburst.viz);
 
       },
 
