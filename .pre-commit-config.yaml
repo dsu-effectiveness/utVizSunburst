@@ -15,6 +15,7 @@ repos:
     -   id: spell-check
         exclude: >
           (?x)^(
+          .*\.js|
           .*\.[rR]|
           .*\.feather|
           .*\.jpeg|
@@ -43,6 +44,7 @@ repos:
           (.*/|)WORDLIST|
           \.github/workflows/.*|
           data/.*|
+          inst/htmlwidgets/.*\.yaml|
           )$
     -   id: lintr
     -   id: readme-rmd-rendered
@@ -58,7 +60,11 @@ repos:
     -   id: file-contents-sorter
         files: '^\.Rbuildignore$'
     -   id: end-of-file-fixer
-        exclude: '\.Rd'
+        exclude: >
+          (?x)^(
+          .*\.Rd|
+          .*\.min.js
+          )$
 -   repo: https://github.com/pre-commit-ci/pre-commit-ci-config
     rev: v1.5.1
     hooks:
