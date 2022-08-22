@@ -29,3 +29,18 @@ head(admissions)
 ```
 
 The dataset contains `r ncol(admissions)` variables and `r nrow(admissions)` observations.
+
+# A simple sunburst chart
+
+The function `sunburst()` generates a sunburst chart. The two main arguments to this function are:
+
+- `data` (which provides the data-frame for the chart);
+- and `steps` (indicating which columns of that data-frame should be presented in the chart, from
+inner-most to outer-most position).
+
+```{r}
+sunburst(
+  admissions,
+  steps = c("student_type", "gpa", "outcome")
+)
+```
