@@ -1,3 +1,8 @@
+# utVizSunburst 0.1.2 *2022-08-25*
+
+-   Document how to use `sunburst()` (clicking, hovering, how many 'steps' are allowed)
+-   Fix bug that disallowed a single variable to be used as 'steps'
+
 # utVizSunburst 0.1.1 *2022-08-23*
 
 -   Use MIT license
