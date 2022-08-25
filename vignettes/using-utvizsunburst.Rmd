@@ -75,3 +75,16 @@ sunburst(
   steps = c("gpa", "club", "student_type", "outcome", "college")
 )
 ```
+
+# Sizing the chart
+
+The initial size of a sunburst chart can be specified using the `width` and `height` arguments in
+`sunburst()`. These take any CSS sizing format.
+
+```{r}
+sunburst(admissions, c("student_type", "outcome"), width = "200px")
+```
+
+```{r}
+sunburst(admissions, c("student_type", "outcome"), width = "100%", height = "100%")
+```
