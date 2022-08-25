@@ -30,17 +30,48 @@ head(admissions)
 
 The dataset contains `r ncol(admissions)` variables and `r nrow(admissions)` observations.
 
-# A simple sunburst chart
+## A simple sunburst chart
 
 The function `sunburst()` generates a sunburst chart. The two main arguments to this function are:
 
 - `data` (which provides the data-frame for the chart);
-- and `steps` (indicating which columns of that data-frame should be presented in the chart, from
-inner-most to outer-most position).
+- and `steps` (indicating which columns of that data-frame should be presented in the chart).
+
+```{r}
+sunburst(
+  data = admissions,
+  steps = c("student_type", "outcome")
+)
+```
+
+The sectors that are highlighted when the user hovers over the chart are proportional to the
+percentage of individuals that make up that sector.
+
+Note that the order of the `steps` values _does_ matter. It defines the order that each variable is
+presented by the chart from inner-most ring (the first entry) to outer-most ring (the final entry).
+
+In the above, `student_type` was on the inside, because it was the first entry in `steps`. But if we
+reverse the order, then `outcome` becomes the inner-most ring.
+
+```{r}
+sunburst(
+  data = admissions,
+  steps = c("outcome", "student_type")
+)
+```
+
+When creating a sunburst chart, any number of the columns in `data` can be used in the `steps`
+argument. As such, we can make a chart containing just a single ring:
+
+```{r}
+sunburst(admissions, steps = "ipeds_race_ethn")
+```
+
+Or we can make a chart containing many rings:
 
 ```{r}
 sunburst(
   admissions,
-  steps = c("student_type", "gpa", "outcome")
+  steps = c("gpa", "club", "student_type", "outcome", "college")
 )
 ```
