@@ -19,8 +19,16 @@ sunburst = function(data, steps, width = NULL, height = NULL, elementId = NULL) 
     steps = steps
   )
 
-  # Ensures that javascript receives a row-oriented view of 'data'
-  attr(x, "TOJSON_ARGS") = list(dataframe = "rows") # nolint: object_name_linter.
+  # Ensure that javascript receives:
+  # - a row-oriented view of 'data'
+  # - where length-1 vectors (e.g., a single value for 'steps') haven't been converted to scalars
+
+  # nolint start: object_name_linter.
+  attr(x, "TOJSON_ARGS") = list(
+    # nolint end
+    dataframe = "rows",
+    auto_unbox = FALSE
+  )
 
   # create widget
   htmlwidgets::createWidget(
