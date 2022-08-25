@@ -1,3 +1,7 @@
+# utVizSunburst 0.1.1 *2022-08-23*
+
+-   Use MIT license
+
 # utVizSunburst 0.1.0 *2022-08-13*
 
 -   sunburst(data, steps) adds a sunburst chart to an html page
