@@ -106,14 +106,11 @@ given sector is displayed in the center of the chart.
 
 ### Clicking
 
-### Double-Clicking
+Clicking on a sector expands that sector to fill the whole chart. Zooming, or drilling-down, into
+the chart in this way allows for a deeper analysis of specific subsets of the original data. On
+zooming, the subset of the original chart that lies outside of the clicked sector is presented. This
+only works for sectors that are not in the outer ring of the chart (since there is no way to
+partition a sector in the outer ring of the chart further).
 
-TODO:
-
-- what happens on clicking
-  - single click
-  - double click
-
-- what happens on hover
-
-- breadcrumbs
+There is a reset button, which allows a user to revert back to the initial chart after they have
+drilled-down into specific subsets of the data.
