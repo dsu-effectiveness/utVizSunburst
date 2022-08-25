@@ -88,3 +88,32 @@ sunburst(admissions, c("student_type", "outcome"), width = "200px")
 ```{r}
 sunburst(admissions, c("student_type", "outcome"), width = "100%", height = "100%")
 ```
+
+## User interaction
+
+Each row of `data` corresponds to an observation. In a university admissions setting, that might be
+information for a single student. The sectors of the sunburst chart represent a proportion of
+these observations. The user can interact with a chart by hovering or clicking on sectors, giving a
+way to gain further information about the data.
+
+### Hovering
+
+Hovering over a sector of the sunburst chart highlights that sector and sectors lying on the path
+leading up to that sector. Paths in the chart go outwards from the inner-most ring and, while
+hovering over a sector, the level of each variable along that path is indicated in text above the
+chart (the breadcrumb trail for the path). Also, the proportion of individuals that are within a
+given sector is displayed in the center of the chart.
+
+### Clicking
+
+### Double-Clicking
+
+TODO:
+
+- what happens on clicking
+  - single click
+  - double click
+
+- what happens on hover
+
+- breadcrumbs
