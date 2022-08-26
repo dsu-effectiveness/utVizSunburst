@@ -30,17 +30,87 @@ head(admissions)
 
 The dataset contains `r ncol(admissions)` variables and `r nrow(admissions)` observations.
 
-# A simple sunburst chart
+## A simple sunburst chart
 
 The function `sunburst()` generates a sunburst chart. The two main arguments to this function are:
 
 - `data` (which provides the data-frame for the chart);
-- and `steps` (indicating which columns of that data-frame should be presented in the chart, from
-inner-most to outer-most position).
+- and `steps` (indicating which columns of that data-frame should be presented in the chart).
+
+```{r}
+sunburst(
+  data = admissions,
+  steps = c("student_type", "outcome")
+)
+```
+
+The sectors that are highlighted when the user hovers over the chart are proportional to the
+percentage of individuals that make up that sector.
+
+Note that the order of the `steps` values _does_ matter. It defines the order that each variable is
+presented by the chart from inner-most ring (the first entry) to outer-most ring (the final entry).
+
+In the above, `student_type` was on the inside, because it was the first entry in `steps`. But if we
+reverse the order, then `outcome` becomes the inner-most ring.
+
+```{r}
+sunburst(
+  data = admissions,
+  steps = c("outcome", "student_type")
+)
+```
+
+When creating a sunburst chart, any number of the columns in `data` can be used in the `steps`
+argument. As such, we can make a chart containing just a single ring:
+
+```{r}
+sunburst(admissions, steps = "ipeds_race_ethn")
+```
+
+Or we can make a chart containing many rings:
 
 ```{r}
 sunburst(
   admissions,
-  steps = c("student_type", "gpa", "outcome")
+  steps = c("gpa", "club", "student_type", "outcome", "college")
 )
 ```
+
+# Sizing the chart
+
+The initial size of a sunburst chart can be specified using the `width` and `height` arguments in
+`sunburst()`. These take any CSS sizing format.
+
+```{r}
+sunburst(admissions, c("student_type", "outcome"), width = "200px")
+```
+
+```{r}
+sunburst(admissions, c("student_type", "outcome"), width = "100%", height = "100%")
+```
+
+## User interaction
+
+Each row of `data` corresponds to an observation. In a university admissions setting, that might be
+information for a single student. The sectors of the sunburst chart represent a proportion of
+these observations. The user can interact with a chart by hovering or clicking on sectors, giving a
+way to gain further information about the data.
+
+### Hovering
+
+Hovering over a sector of the sunburst chart highlights that sector and sectors lying on the path
+leading up to that sector. Paths in the chart go outwards from the inner-most ring and, while
+hovering over a sector, the level of each variable along that path is indicated in text above the
+chart (the breadcrumb trail for the path). Also, the proportion of individuals that are within a
+given sector is displayed in the center of the chart.
+
+### Clicking
+
+Clicking on a sector expands that sector to fill the whole chart. Zooming, or drilling-down, into
+the chart in this way allows for a deeper analysis of specific subsets of the original data. On
+zooming, the subset of the original chart that lies outside of the clicked sector is presented. This
+only works for sectors that are not in the outer ring of the chart (since there is no way to
+partition a sector in the outer ring of the chart further).
+
+There is a reset button, which allows a user to revert back to the initial chart after they have
+drilled-down into specific subsets of the data.
