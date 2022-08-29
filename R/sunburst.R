@@ -3,21 +3,26 @@
 #' @param   data   Data-frame. This should have one row per observation (student).
 #' @param   steps   Character. Subset of the columns of the data-frame. These correspond to the
 #'   rings of the sunburst chart. The first entry of steps is the inner-most ring of the chart.
+#' @param   palette   Character. A vector of colors that determines the color of each sector in the
+#'   inner-most ring of the sunburst chart. The sectors are colored from largest to smallest.
 #' @param   width,height   The initial size of the visualization
 #' @param   elementId   Identifier for the HTML element into which the visualization will be added.
 #'
 #' @export
 
-sunburst = function(data, steps, width = NULL, height = NULL, elementId = NULL) {
+sunburst = function(data, steps, palette = NULL, width = NULL, height = NULL, elementId = NULL) {
   if (!all(steps %in% colnames(data)) || any(duplicated(steps))) {
     stop("steps should be unique and be a subset of colnames(data)")
   }
 
-  # forward options using x
   x = list(
     data = data[steps],
     steps = steps
   )
+
+  if (!is.null(palette)) {
+    x$palette = gplots::col2hex(palette)
+  }
 
   # Ensure that javascript receives:
   # - a row-oriented view of 'data'

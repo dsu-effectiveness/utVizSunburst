@@ -50,3 +50,37 @@ describe("the sunburst object", {
     )
   })
 })
+
+describe("the sunburst 'palette'", {
+  it("is absent if not provided by the user", {
+    sb = sunburst(test_data$data, steps = test_data$steps)
+
+    expect_false("palette" %in% names(sb$x))
+  })
+
+  it("is present if provided by the user", {
+    hex_palette = c("#FFFFFF", "#000000", "#ABCABC")
+
+    sb = sunburst(
+      test_data$data,
+      steps = test_data$steps,
+      palette = hex_palette
+    )
+
+    expect_true("palette" %in% names(sb$x))
+    expect_equal(sb$x$palette, hex_palette)
+  })
+
+  it("converts named colors to hex codes", {
+    col_palette = c("goldenrod", "whitesmoke", "black")
+    hex_palette = c("#DAA520", "#F5F5F5", "#000000")
+
+    sb = sunburst(
+      test_data$data,
+      steps = test_data$steps,
+      palette = col_palette
+    )
+
+    expect_equal(sb$x$palette, hex_palette)
+  })
+})

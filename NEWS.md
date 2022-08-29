@@ -1,3 +1,7 @@
+# utVizSunburst 0.2.0 *2022-08-26*
+
+-   User can specify colors for the inner-ring of the sunburst chart using the `palette` argument.
+
 # utVizSunburst 0.1.2 *2022-08-25*
 
 -   Document how to use `sunburst()` (clicking, hovering, how many 'steps' are allowed)
