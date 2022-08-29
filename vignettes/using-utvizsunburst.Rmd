@@ -114,3 +114,32 @@ partition a sector in the outer ring of the chart further).
 
 There is a reset button, which allows a user to revert back to the initial chart after they have
 drilled-down into specific subsets of the data.
+
+## Colors
+
+By default, the sector-colors in the sunburst chart are based on the color of the inner-most ring.
+A palette of colors can be supplied by the user if the default colors need to change. These are used
+to color all the sectors of the inner ring in order from largest to smallest.
+
+```{r}
+unique(admissions$outcome)
+
+# The colors from RColorBrewer::brewer.pal(4, "RdBu")
+palette = c("#CA0020", "#F4A582", "#92C5DE", "#0571B0")
+
+sunburst(
+  admissions,
+  steps = c("outcome", "student_type"),
+  palette = palette
+)
+```
+
+The named colors provided by R can be used in the `palette` argument:
+
+```{r}
+sunburst(
+  admissions,
+  steps = c("outcome", "student_type"),
+  palette = c("firebrick", "goldenrod", "dodgerblue", "dimgrey")
+)
+```

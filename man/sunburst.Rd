@@ -4,13 +4,23 @@
 \alias{sunburst}
 \title{Create a HTML sunburst plot for displaying admissions and retention data}
 \usage{
-sunburst(data, steps, width = NULL, height = NULL, elementId = NULL)
+sunburst(
+  data,
+  steps,
+  palette = NULL,
+  width = NULL,
+  height = NULL,
+  elementId = NULL
+)
 }
 \arguments{
 \item{data}{Data-frame. This should have one row per observation (student).}
 
 \item{steps}{Character. Subset of the columns of the data-frame. These correspond to the
 rings of the sunburst chart. The first entry of steps is the inner-most ring of the chart.}
+
+\item{palette}{Character. A vector of colors that determines the color of each sector in the
+inner-most ring of the sunburst chart. The sectors are colored from largest to smallest.}
 
 \item{width, height}{The initial size of the visualization}
 

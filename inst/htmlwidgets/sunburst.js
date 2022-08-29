@@ -13,8 +13,13 @@ HTMLWidgets.widget({
       renderValue: function(x) {
 
         const sunburst = utviz
-          .createSunburst(x.data, x.steps)
-          .render();
+          .createSunburst(x.data, x.steps);
+
+        if ("palette" in x) {
+          sunburst.palette(x.palette);
+        };
+
+        sunburst.render();
 
         el.appendChild(sunburst.viz);
 
