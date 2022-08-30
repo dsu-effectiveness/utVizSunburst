@@ -112,8 +112,10 @@ zooming, the subset of the original chart that lies outside of the clicked secto
 only works for sectors that are not in the outer ring of the chart (since there is no way to
 partition a sector in the outer ring of the chart further).
 
-There is a reset button, which allows a user to revert back to the initial chart after they have
-drilled-down into specific subsets of the data.
+After having drilled-down into a sunburst chart, there are two ways to reverse this process:
+
+- shift-click: this expands a drilled-down chart one level at a time;
+- clicking the reset button: this reverts the chart back to it's initial state.
 
 ## Colors
 

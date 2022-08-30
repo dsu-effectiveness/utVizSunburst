@@ -1,3 +1,7 @@
+# utVizSunburst 0.2.1 *2022-08-30*
+
+-   Documented the use of shift-clicking to expand a drilled-down chart one level at a time.
+
 # utVizSunburst 0.2.0 *2022-08-26*
 
 -   User can specify colors for the inner-ring of the sunburst chart using the `palette` argument.
