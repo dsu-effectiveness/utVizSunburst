@@ -143,3 +143,15 @@ sunburst(
   palette = c("firebrick", "goldenrod", "dodgerblue", "dimgrey")
 )
 ```
+
+If there are `k` levels in the inner-most category, and a palette with fewer colors than this is
+provided, then some colors will be repeated. Similarly, if additional colors are present in the
+palette, then only the first `k` will be used to color the chart.
+
+```{r}
+sunburst(
+  admissions,
+  steps = c("outcome", "student_type"),
+  palette = "dimgrey"
+)
+```
