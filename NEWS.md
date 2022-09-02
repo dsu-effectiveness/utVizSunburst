@@ -1,3 +1,7 @@
+# utVizSunburst 0.2.2 *2022-09-02*
+
+-   Documented the use of shift-clicking to expand a drilled-down chart one level at a time.
+
 # utVizSunburst 0.2.1 *2022-08-30*
 
 -   Use updated version of utviz JS library (`3bb665d`) that allows length-1 palette vectors to be
