@@ -1,6 +1,13 @@
-# utVizSunburst 0.2.1 *2022-08-30*
+# utVizSunburst 0.2.2 *2022-09-02*
 
 -   Documented the use of shift-clicking to expand a drilled-down chart one level at a time.
+
+# utVizSunburst 0.2.1 *2022-08-30*
+
+-   Use updated version of utviz JS library (`3bb665d`) that allows length-1 palette vectors to be
+    used in Sunburst charts
+-   Document the reuse of palette colors when fewer colors are provided than there are levels of
+    the inner category
 
 # utVizSunburst 0.2.0 *2022-08-26*
 
@@ -26,7 +33,7 @@
 # utVizSunburst 0.0.6 *2022-08-12*
 
 -   Store the JS dependencies of the sunburst() widget in the package (handlebars 4.7.7; utviz
-    "#cdc8842")
+    `#cdc8842`)
 -   Define the JS dependencies used by sunburst() in it's .yaml file
 
 # utVizSunburst 0.0.5 *2022-08-12*
