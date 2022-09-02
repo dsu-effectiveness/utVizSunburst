@@ -1,3 +1,8 @@
+# utVizSunburst 0.2.3 *2022-09-02*
+
+-   Ensure that `el.appendChild()` is called once for each sunburst chart, rather than on each call
+    to `renderValue()`. This prevents multiple charts being added to the same HTML element.
+
 # utVizSunburst 0.2.2 *2022-09-02*
 
 -   Documented the use of shift-clicking to expand a drilled-down chart one level at a time.
