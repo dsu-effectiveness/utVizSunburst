@@ -6,22 +6,21 @@ HTMLWidgets.widget({
 
   factory: function(el, width, height) {
 
-    // TODO: define shared variables for this instance
+    const sunburst = utviz.createSunburst();
+    el.appendChild(sunburst.viz);
 
     return {
 
       renderValue: function(x) {
 
-        const sunburst = utviz
-          .createSunburst(x.data, x.steps);
+        sunburst.data(x.data);
+        sunburst.steps(x.steps);
 
         if ("palette" in x) {
           sunburst.palette(x.palette);
         };
 
         sunburst.render();
-
-        el.appendChild(sunburst.viz);
 
       },
 
