@@ -5,12 +5,24 @@
 #'   rings of the sunburst chart. The first entry of steps is the inner-most ring of the chart.
 #' @param   palette   Character. A vector of colors that determines the color of each sector in the
 #'   inner-most ring of the sunburst chart. The sectors are colored from largest to smallest.
+#' @param   color_overrides   List of lists. Each sublist should have a 'color' entry (containing
+#'   any valid R color) and should have at least one of 'group' and 'name'. To specify a color for
+#'   a ring of the Sunburst chart, provide a 'group' entry. To specify a color for a named sector
+#'   of a ring, provide a 'name' entry. The 'group' will be a column name in \code{data} and the
+#'   'name' will be one of the levels within a column of \code{data}. Since a given name may be
+#'   present in different columns, you can specify both a group and a name to be more explicit.
 #' @param   width,height   The initial size of the visualization
 #' @param   elementId   Identifier for the HTML element into which the visualization will be added.
 #'
 #' @export
 
-sunburst = function(data, steps, palette = NULL, width = NULL, height = NULL, elementId = NULL) {
+sunburst = function(data,
+                    steps,
+                    palette = NULL,
+                    color_overrides = NULL,
+                    width = NULL,
+                    height = NULL,
+                    elementId = NULL) {
   if (!all(steps %in% colnames(data)) || any(duplicated(steps))) {
     stop("steps should be unique and be a subset of colnames(data)")
   }
@@ -22,6 +34,9 @@ sunburst = function(data, steps, palette = NULL, width = NULL, height = NULL, el
 
   if (!is.null(palette)) {
     x$palette = gplots::col2hex(palette)
+  }
+  if (!is.null(color_overrides)) {
+    x$colorOverrides = encode_color_overrides(color_overrides)
   }
 
   # Ensure that javascript receives:

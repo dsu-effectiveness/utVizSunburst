@@ -19,6 +19,9 @@ HTMLWidgets.widget({
         if ("palette" in x) {
           sunburst.palette(x.palette);
         };
+        if ("colorOverrides" in x) {
+          sunburst.colorOverrides(x.colorOverrides);
+        }
 
         sunburst.render();
 

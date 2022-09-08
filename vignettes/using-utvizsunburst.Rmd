@@ -157,3 +157,39 @@ sunburst(
   palette = "dimgrey"
 )
 ```
+
+### Overriding the color palette for specific groups / entries
+
+The color scheme in the Sunburst charts can be modified at a finer level.
+
+For example, you can provide a color that is applied to a specific subset of a group. If we want to
+highlight the students who 'stopped' studying we can pass a color for that subset of the students.
+The 'group' is one of the entries in 'steps' () and 'name' is the subset of that group that is to
+be highlighted. As above, any valid R color can be used.
+
+```{r}
+sunburst(
+  admissions,
+  steps = c("gpa", "outcome"),
+  color_overrides = list(
+    list(group = "outcome", name = "stopped", color = "black")
+  )
+)
+```
+
+It is also possible to color an entire group.
+
+```{r}
+sunburst(
+  admissions,
+  steps = c("college", "gpa", "student_type", "outcome"),
+  color_overrides = list(
+    list(group = "student_type", color = "dodgerblue"),
+    list(group = "gpa", color = "dodgerblue3")
+  )
+)
+```
+
+The color overrides should be a list, where each entry is a list. Those subentries must have a
+'color' entry and at least one of 'group' and 'name'. The 'group's are the rings of the Sunburst
+chart and the 'name's are the sectors within those rings.

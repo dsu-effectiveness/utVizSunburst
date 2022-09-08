@@ -1,3 +1,10 @@
+# utVizSunburst 0.3.0 *2022-09-06*
+
+-   New feature: User can override color scheme for the rings and sectors of a sunburst chart using
+    `color_overrides` argument to `sunburst()`.
+-   Use updated version of utviz JS library (`c8d1ee` v1.0.1) allows mouseover / mouseout handlers
+    on sunburst charts.
+
 # utVizSunburst 0.2.3 *2022-09-02*
 
 -   Ensure that `el.appendChild()` is called once for each sunburst chart, rather than on each call
