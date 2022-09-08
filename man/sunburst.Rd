@@ -8,6 +8,7 @@ sunburst(
   data,
   steps,
   palette = NULL,
+  color_overrides = NULL,
   width = NULL,
   height = NULL,
   elementId = NULL
@@ -21,6 +22,13 @@ rings of the sunburst chart. The first entry of steps is the inner-most ring of 
 
 \item{palette}{Character. A vector of colors that determines the color of each sector in the
 inner-most ring of the sunburst chart. The sectors are colored from largest to smallest.}
+
+\item{color_overrides}{List of lists. Each sublist should have a 'color' entry (containing
+any valid R color) and should have at least one of 'group' and 'name'. To specify a color for
+a ring of the Sunburst chart, provide a 'group' entry. To specify a color for a named sector
+of a ring, provide a 'name' entry. The 'group' will be a column name in \code{data} and the
+'name' will be one of the levels within a column of \code{data}. Since a given name may be
+present in different columns, you can specify both a group and a name to be more explicit.}
 
 \item{width, height}{The initial size of the visualization}
 

@@ -4,6 +4,6 @@ dependencies:
     src: htmlwidgets/handlebars
     script: handlebars.min.js
   - name: utviz
-    version: 0.0.1
+    version: 1.0.1
     src: htmlwidgets/utviz
     script: utviz.min.js

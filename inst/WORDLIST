@@ -18,6 +18,8 @@ LazyData
 lintr
 magrittr
 md
+mouseout
+mouseover
 precommit
 Precommit
 rcmd
@@ -31,6 +33,7 @@ RoxygenNote
 src
 styler
 stylesheet
+subentries
 testthat
 uncomment
 utviz
