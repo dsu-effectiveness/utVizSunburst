@@ -36,5 +36,8 @@ parse_js_colors = function(x) {
   rgb_values = matches[, 2:4, drop = FALSE]
   class(rgb_values) = "numeric"
 
-  rgb(rgb_values[, 1], rgb_values[, 2], rgb_values[, 3], maxColorValue = 255)
+  grDevices::rgb(
+    rgb_values[, 1], rgb_values[, 2], rgb_values[, 3],
+    maxColorValue = 255
+  )
 }
