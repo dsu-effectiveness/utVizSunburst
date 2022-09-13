@@ -1,3 +1,7 @@
+# utVizSunburst 0.4.1 *2022-09-13*
+
+-   Pass `"color"` variable through the mouse-* handlers.
+
 # utVizSunburst 0.4.0 *2022-09-09*
 
 -   New feature: User can supply mouse-over, mouse-out or alt-click handlers to the `sunburst()`

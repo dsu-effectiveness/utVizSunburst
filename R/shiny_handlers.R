@@ -44,5 +44,5 @@ convert_path_data = function(x, session, inputname) {
   rlang::check_installed("purrr")
 
   df = purrr::map_dfr(x, as.data.frame)
-  df[c("group", "name", "value", "percentage")]
+  df[c("group", "name", "value", "percentage", "color")]
 }
