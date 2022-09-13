@@ -1,3 +1,14 @@
+# utVizSunburst 0.4.1 *2022-09-13*
+
+-   Pass `"color"` variable through the mouse-* handlers.
+
+# utVizSunburst 0.4.0 *2022-09-09*
+
+-   New feature: User can supply mouse-over, mouse-out or alt-click handlers to the `sunburst()`
+    function which allow widget-associated path data to be accessed from Shiny.
+-   An example shiny app that shows path-data upon mouse-over has been added.
+-   A function to run example shiny apps has been added: `run_shiny_example("mouse_over")`.
+
 # utVizSunburst 0.3.0 *2022-09-06*
 
 -   New feature: User can override color scheme for the rings and sectors of a sunburst chart using

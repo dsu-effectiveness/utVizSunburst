@@ -68,7 +68,7 @@ describe("the sunburst 'palette'", {
     )
 
     expect_true("palette" %in% names(sb$x))
-    expect_equal(sb$x$palette, hex_palette)
+    expect_equal(sb$x$palette, I(hex_palette))
   })
 
   it("converts named colors to hex codes", {
@@ -81,6 +81,6 @@ describe("the sunburst 'palette'", {
       palette = col_palette
     )
 
-    expect_equal(sb$x$palette, hex_palette)
+    expect_equal(sb$x$palette, I(hex_palette))
   })
 })

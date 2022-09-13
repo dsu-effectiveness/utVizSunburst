@@ -5,6 +5,8 @@ Config
 cre
 el
 gplots
+hexstring
+hexstrings
 hispanic
 htmlwidgets
 HTMLWidgets
@@ -20,8 +22,10 @@ magrittr
 md
 mouseout
 mouseover
+patrick
 precommit
 Precommit
+purrr
 rcmd
 README
 renderValue
@@ -29,8 +33,10 @@ retentions
 rlang
 rmarkdown
 Rmd
+Roxygen
 RoxygenNote
 src
+stringr
 styler
 stylesheet
 subentries
