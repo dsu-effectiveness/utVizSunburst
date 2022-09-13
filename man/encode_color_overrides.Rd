@@ -7,12 +7,12 @@
 encode_color_overrides(x)
 }
 \arguments{
-\item{x}{list of lists. Each entry must have a `color` entry, and may have a `name` or
-`group` entry. The `color` may be a named R color, an \code{rgb()} value or a hex string.}
+\item{x}{list of lists. Each entry must have a \code{color} entry, and may have a \code{name} or
+\code{group} entry. The \code{color} may be a named R color, an \code{rgb()} value or a hex string.}
 }
 \value{
-A list of lists. The output will be identical to the input, except that any `color`
-  entry will have been converted to a hex string.
+A list of lists. The output will be identical to the input, except that any \code{color}
+entry will have been converted to a hex string.
 }
 \description{
 Ensure color-override definitions contain hex-coded color strings

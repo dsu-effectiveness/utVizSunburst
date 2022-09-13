@@ -10,6 +10,7 @@ repos:
         additional_dependencies:
           - gplots
           - htmlwidgets
+          - shiny
     # codemeta must be above use-tidy-description when both are used
     # -   id: codemeta-description-updated
     -   id: use-tidy-description

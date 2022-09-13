@@ -11,6 +11,10 @@
 #'   of a ring, provide a 'name' entry. The 'group' will be a column name in \code{data} and the
 #'   'name' will be one of the levels within a column of \code{data}. Since a given name may be
 #'   present in different columns, you can specify both a group and a name to be more explicit.
+#' @param   mouseover_handler,mouseout_handler,alt_click_handler   A JavaScript function to be
+#'   called whenever a mouseover, mouseout or Alt-click event occurs within the sunburst widget.
+#'   This can be used to obtain details about the path within the sunburst chart and should be
+#'   constructed using \code{htmlwidgets::JS()}.
 #' @param   width,height   The initial size of the visualization
 #' @param   elementId   Identifier for the HTML element into which the visualization will be added.
 #'
@@ -20,6 +24,9 @@ sunburst = function(data,
                     steps,
                     palette = NULL,
                     color_overrides = NULL,
+                    mouseover_handler = NULL,
+                    mouseout_handler = NULL,
+                    alt_click_handler = NULL,
                     width = NULL,
                     height = NULL,
                     elementId = NULL) {
@@ -33,21 +40,32 @@ sunburst = function(data,
   )
 
   if (!is.null(palette)) {
-    x$palette = gplots::col2hex(palette)
+    # The palette method on JS-sunburst objects expects to receive an array of colors.
+    #
+    # By wrapping this vector with I(...) we prevent the JSON serializer from converting length-1
+    # vectors to scalars
+    x$palette = I(gplots::col2hex(palette))
   }
   if (!is.null(color_overrides)) {
     x$colorOverrides = encode_color_overrides(color_overrides)
   }
+  if (!is.null(mouseover_handler)) {
+    x$mouseoverHandler = mouseover_handler
+  }
+  if (!is.null(mouseout_handler)) {
+    x$mouseoutHandler = mouseout_handler
+  }
+  if (!is.null(alt_click_handler)) {
+    x$altClickHandler = alt_click_handler
+  }
 
   # Ensure that javascript receives:
   # - a row-oriented view of 'data'
-  # - where length-1 vectors (e.g., a single value for 'steps') haven't been converted to scalars
 
   # nolint start: object_name_linter.
   attr(x, "TOJSON_ARGS") = list(
     # nolint end
-    dataframe = "rows",
-    auto_unbox = FALSE
+    dataframe = "rows"
   )
 
   # create widget

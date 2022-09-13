@@ -9,6 +9,9 @@ sunburst(
   steps,
   palette = NULL,
   color_overrides = NULL,
+  mouseover_handler = NULL,
+  mouseout_handler = NULL,
+  alt_click_handler = NULL,
   width = NULL,
   height = NULL,
   elementId = NULL
@@ -29,6 +32,11 @@ a ring of the Sunburst chart, provide a 'group' entry. To specify a color for a 
 of a ring, provide a 'name' entry. The 'group' will be a column name in \code{data} and the
 'name' will be one of the levels within a column of \code{data}. Since a given name may be
 present in different columns, you can specify both a group and a name to be more explicit.}
+
+\item{mouseover_handler, mouseout_handler, alt_click_handler}{A JavaScript function to be
+called whenever a mouseover, mouseout or Alt-click event occurs within the sunburst widget.
+This can be used to obtain details about the path within the sunburst chart and should be
+constructed using \code{htmlwidgets::JS()}.}
 
 \item{width, height}{The initial size of the visualization}
 

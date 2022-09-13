@@ -193,3 +193,34 @@ sunburst(
 The color overrides should be a list, where each entry is a list. Those subentries must have a
 'color' entry and at least one of 'group' and 'name'. The 'group's are the rings of the Sunburst
 chart and the 'name's are the sectors within those rings.
+
+## Using {utVizSunburst} in a shiny app
+
+Example shiny apps that use `utVizSunburst` are stored within the package. The source code can be
+found in `./inst/shiny-examples/<app-name>`. To run these type
+`run_shiny_example(app_name = "the-app")`.
+
+Advanced: Data for the path to a sector of the Sunburst chart can be obtained by adding a handler
+function that modifies a shiny `input` variable. A shiny input-handler called
+`utVizSunburst.pathConverter` that converts the path data into an R data.frame is provided. To bind
+that data. frame to a shiny 'input' variable you can add an `alt_click_handler`, `mouseover_handler`
+or `mouseout_handler` argument to the `sunburst()` function. This should be a JavaScript function
+created with `htmlwidgets::JS()` that takes the arguments `event`, `data` and `pathArray`.
+
+Some functions that will bind a shiny input variable to this data are provided by
+`get_shiny_input_handler`. For example, the following code will update the shiny
+`input$my_path_data` variable whenever a user Alt-clicks on a sector of the Sunburst chart (though
+you may find the example app in `inst/shiny-examples` to be more informative).
+
+```r
+handler = get_shiny_input_handler(inputId = "my_path_data", type = "path_data")
+
+# In server() function:
+sunburst_object = reactive({
+  sunburst(
+    some_data,
+    steps = steps(),
+    alt_click_handler = handler
+  )
+})
+```
