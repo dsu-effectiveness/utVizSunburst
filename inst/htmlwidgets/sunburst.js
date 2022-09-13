@@ -22,6 +22,15 @@ HTMLWidgets.widget({
         if ("colorOverrides" in x) {
           sunburst.colorOverrides(x.colorOverrides);
         }
+        if ("mouseoverHandler" in x) {
+          sunburst.mouseoverHandler(x.mouseoverHandler);
+        }
+        if ("mouseoutHandler" in x) {
+          sunburst.mouseoutHandler(x.mouseoutHandler);
+        }
+        if ("altClickHandler" in x) {
+          sunburst.altClickHandler(x.altClickHandler);
+        }
 
         sunburst.render();
 
