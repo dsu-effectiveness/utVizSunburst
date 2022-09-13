@@ -2,7 +2,7 @@ Type: Package
 Package: utVizSunburst
 Title: htmlwidgets package for creating sunburst plots of retentions and
     admissions data
-Version: 0.4.0
+Version: 0.4.1
 Authors@R:
     person("Jumping", "Rivers", , "info@jumpingrivers.com", role = c("aut", "cre"))
 Description: A package to create interactive visualizations of retentions
@@ -15,9 +15,11 @@ Imports:
     htmlwidgets,
     magrittr,
     rlang,
-    shiny
+    shiny,
+    stringr
 Suggests: 
     knitr,
+    patrick,
     purrr,
     rmarkdown,
     testthat (>= 3.0.0)
